@@ -27,7 +27,12 @@
     });
 </script>
 
-<p> welcum 2 my websitre :) </p>
+<img src="http://textfiles.com/underconstruction/HeHeartlandLane5025imagesconstruction.gif" width=200px>
+
+<h1> welcum 2 my websitre :) </h1>
+
+<img src="http://textfiles.com/underconstruction/NaNashvilleStage9198construction2.gif">
+
 <div id="infobox">
         <div id="title" bind:this={title_div}>Title</div>
         <div id="slider">
