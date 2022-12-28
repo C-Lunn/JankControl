@@ -1,0 +1,24 @@
+@import "@radix-ui/colors/mauveDark.css";
+@import "@radix-ui/colors/pinkDark.css";
+
+.dark-theme {
+    --color-bg: var(--mauve1);
+    --color-bg-2: var(--mauve2);
+    --color-bg-3: var(--mauve3);
+
+    --color-fg: var(--mauve11);
+    --color-fg-2: var(--mauve12);
+
+    --color-accent: var(--pink);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 100%;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
