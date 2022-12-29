@@ -1,0 +1,23 @@
+@use "./color";
+
+$colors: (
+    "bg": color.$mauve1,
+    "bg-2": color.$mauve2,
+    "bg-3": color.$mauve3,
+    "border": color.$mauve4,
+    "border-2": color.$mauve5,
+    "border-3": color.$mauve6,
+    "fg": color.$mauve11,
+    "fg-2": color.$mauve12,
+    "accent": color.$pink9,
+);
+
+:root {
+    @each $n, $c in $colors {
+        --color-#{$n}: #{$c};
+
+        .color-#{$n} {
+            color: $c;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.asset {
+
+    &.filled {
+        .glyph {
+            fill: var(--glyph-color);
+            stroke: none;
+        }
+    }
+
+    &.stroked {
+        .glyph {
+            fill: transparent;
+            stroke: var(--glyph-color);
+            stroke-width: 2px;
+        }
+    }
+}

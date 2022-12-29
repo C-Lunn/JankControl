@@ -1,0 +1,21 @@
+%family-body {
+    font-family: Inter, sans-serif;
+}
+
+%size-body {
+    font-size: 1rem;
+}
+
+%size-detail {
+    font-size: 0.8rem;
+}
+
+.text-neutral {
+    @extend %family-body;
+    @extend %size-body;
+}
+
+%text-elide {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
