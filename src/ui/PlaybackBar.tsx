@@ -1,23 +1,7 @@
-import { CSSProperties } from "react";
+import { shortformat } from "../utils/format";
 import { Next, PlayPause, Prev } from "./Assets";
 import "./PlaybackBar.scss";
-
-type ProgressProps = {
-    progress: number;
-};
-
-const Progress = ({ progress }: ProgressProps) => {
-    return (
-        <div className="progress">
-            <div className="track">
-                <div
-                    className="indicator"
-                    style={{ "--progress": progress } as CSSProperties}
-                ></div>
-            </div>
-        </div>
-    );
-};
+import Slider from "./Slider";
 
 type Props = {
     isPlaying: boolean;
@@ -28,9 +12,19 @@ type Props = {
         current: number;
         total: number;
     };
+    volume: number;
+    onVolumeChange?: (value: number) => void;
 };
 
-const PlaybackBar = ({ isPlaying, title, artist, onPlay, progress }: Props) => {
+const PlaybackBar = ({
+    isPlaying,
+    title,
+    artist,
+    onPlay,
+    progress,
+    volume,
+    onVolumeChange,
+}: Props) => {
     const percentProgress = progress.current / progress.total;
     return (
         <div className="playback text-neutral color-fg">
@@ -50,16 +44,19 @@ const PlaybackBar = ({ isPlaying, title, artist, onPlay, progress }: Props) => {
                     <Next />
                 </button>
                 <div className="scrubber">
-                    <span className="current">{progress.current}</span>
-                    <span className="progress">
-                        <Progress progress={percentProgress} />
+                    <span className="current">
+                        {shortformat(progress.current)}
                     </span>
-                    <span className="total">{progress.total}</span>
+                    <span className="progress">
+                        <Slider progress={percentProgress} />
+                    </span>
+                    <span className="total">{shortformat(progress.total)}</span>
                 </div>
             </div>
 
             <div className="playback__macros">
                 <button className="playbackbutton fadeout">Fade out</button>
+                <Slider progress={volume} onChange={onVolumeChange} />
             </div>
         </div>
     );
