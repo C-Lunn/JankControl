@@ -1,4 +1,6 @@
 .asset {
+    width: var(--size);
+    height: var(--size);
 
     &.filled {
         .glyph {

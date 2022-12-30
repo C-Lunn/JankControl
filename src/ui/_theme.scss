@@ -1,4 +1,5 @@
 @use "./color";
+@use "./resets";
 
 $colors: (
     "bg": color.$mauve1,
@@ -10,6 +11,9 @@ $colors: (
     "fg": color.$mauve11,
     "fg-2": color.$mauve12,
     "accent": color.$pink9,
+    "fill": color.$pink7,
+    "fill-2": color.$pink8,
+    "fill-3": color.$pink9,
 );
 
 :root {
@@ -19,5 +23,16 @@ $colors: (
         .color-#{$n} {
             color: $c;
         }
+    }
+}
+
+@mixin hover($hover-color) {
+    transition: background-color 120ms ease-in-out;
+    &:hover {
+        transition: background-color 60ms ease-in-out;
+        background-color: $hover-color;
+    }
+    &:focus-visible {
+        outline: 2px solid $hover-color;
     }
 }
