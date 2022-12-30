@@ -1,0 +1,84 @@
+@use "./theme";
+@use "./text";
+
+.playback {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem;
+}
+
+.playback__details {
+    justify-self: start;
+    .title {
+    }
+    .artist {
+        font-size: 0.8em;
+    }
+}
+
+.playback__controls {
+    align-items: center;
+    display: grid;
+    gap: 0.25rem;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1rem;
+    grid-template-areas:
+        "prev playpause next"
+        "progress progress progress";
+
+    .prev {
+        grid-area: prev;
+    }
+    .playpause {
+        grid-area: playpause;
+    }
+    .next {
+        grid-area: next;
+    }
+    .scrubber {
+        align-items: center;
+        display: grid;
+        font-size: 0.8rem;
+        grid-template-columns: 1fr 9fr 1fr;
+        gap: 0.25rem;
+        grid-area: progress;
+    }
+}
+
+.playback__macros {
+    justify-self: end;
+}
+
+.playbackbutton {
+    @extend %button;
+    background: var(--color-fill);
+    @include theme.hover(var(--color-fill-2));
+    display: grid;
+    place-items: center;
+}
+
+.progress {
+    display: grid;
+    grid-template-areas: "main";
+    justify-content: stretch;
+    gap: 1rem;
+
+    & > * {
+        grid-area: main;
+    }
+
+    .track {
+        background-color: var(--color-bg-3);
+        height: 2px;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .indicator {
+        background-color: white;
+        width: calc(var(--progress) * 100%);
+        height: 100%;
+    }
+}
