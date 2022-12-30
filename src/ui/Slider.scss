@@ -1,0 +1,61 @@
+@use "./theme";
+
+.slider {
+    --size: 2px;
+
+    display: grid;
+    align-items: center;
+    grid-template-areas: "main";
+    position: relative;
+    height: 12px;
+    gap: 1rem;
+
+    & > * {
+        grid-area: main;
+    }
+    &:not(.is-enabled),
+    &:not(:hover):not(:active):not(:focus-visible) {
+        .slider__thumb {
+            transition: opacity 120ms ease-in-out;
+            opacity: 0;
+        }
+    }
+    &:hover {
+        .slider__thumb {
+            transition: opacity 60ms ease-in-out;
+        }
+    }
+}
+
+.slider__track {
+    background-color: var(--color-surface);
+    border-radius: var(--size);
+    height: var(--size);
+}
+
+.slider__range {
+    background-color: white;
+    border-radius: var(--size);
+    display: block;
+    height: var(--size);
+    position: absolute;
+    transition: background-color 120ms ease-in-out;
+
+    .slider.is-enabled:active & {
+        transition: background-color 60ms ease-in-out;
+        background-color: var(--color-accent);
+    }
+}
+
+.slider__thumb {
+    outline: none;
+    .slider.is-enabled &:focus-visible {
+        .asset {
+            overflow: visible;
+            .glyph {
+                stroke: var(--color-accent-3);
+                stroke-width: 2px;
+            }
+        }
+    }
+}

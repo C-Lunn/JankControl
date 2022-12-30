@@ -45,7 +45,7 @@ const Glyph = ({
 export const Dot = ({ ...props }: Props) => {
     return (
         <Glyph {...{ ...props, name: "dot" }}>
-            <ellipse className="glyph" cx="8" cy="8" rx="6" ry="6" />
+            <ellipse className="glyph" cx="8" cy="8" rx="8" ry="8" />
         </Glyph>
     );
 };
