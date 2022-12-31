@@ -8,6 +8,7 @@ type Props = {
     title: string;
     artist?: string;
     onPlay: () => void;
+    onSkip: () => void;
     progress: {
         current: number;
         total: number;
@@ -21,11 +22,12 @@ const PlaybackBar = ({
     title,
     artist,
     onPlay,
+    onSkip,
     progress,
     volume,
     onVolumeChange,
 }: Props) => {
-    const percentProgress = progress.current / progress.total;
+    const percentProgress = (progress.current / progress.total) * 100;
     return (
         <div className="playback text-neutral color-fg">
             <div className="playback__details">
@@ -34,13 +36,13 @@ const PlaybackBar = ({
             </div>
 
             <div className="playback__controls">
-                <button className="playbackbutton prev" onClick={onPlay}>
+                <button className="playbackbutton prev" disabled>
                     <Prev />
                 </button>
                 <button className="playbackbutton playpause" onClick={onPlay}>
                     <PlayPause isPlaying={isPlaying} />
                 </button>
-                <button className="playbackbutton next" onClick={onPlay}>
+                <button className="playbackbutton next" onClick={onSkip}>
                     <Next />
                 </button>
                 <div className="scrubber">

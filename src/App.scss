@@ -1,15 +1,7 @@
-@import "@radix-ui/colors/mauveDark.css";
-@import "@radix-ui/colors/pinkDark.css";
+@use "./ui/theme";
 
-.dark-theme {
-    --color-bg: var(--mauve1);
-    --color-bg-2: var(--mauve2);
-    --color-bg-3: var(--mauve3);
-
-    --color-fg: var(--mauve11);
-    --color-fg-2: var(--mauve12);
-
-    --color-accent: var(--pink);
+html {
+    height: 100vh;
 }
 
 body {
@@ -19,6 +11,21 @@ body {
     font-weight: 400;
     line-height: 100%;
     margin: 0;
-    min-height: 100vh;
-    padding: 0;
+    padding: 0 2rem;
+    overflow: hidden;
+    height: 100%;
+}
+
+.app {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+    height: 100%;
+
+    .queue {
+        overflow-y: scroll;
+    }
+
+    .playback {
+    }
 }

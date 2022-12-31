@@ -15,10 +15,11 @@ const Slider = ({ progress, onChange }: SliderProps) => {
                 className={clsx("slider", {
                     "is-enabled": onChange !== undefined,
                 })}
-                max={1}
-                step={0.01}
+                max={100}
+                step={1}
                 aria-label="Volume"
-                value={[progress]}
+                value={[progress || 0]}
+                defaultValue={[0]}
                 onValueChange={onChange ? (v) => onChange(v[0]) : undefined}
             >
                 <RadixSlider.Track className="slider__track">

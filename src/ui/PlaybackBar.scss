@@ -2,21 +2,22 @@
 @use "./text";
 
 .playback {
-    align-items: center;
+    align-items: flex-start;
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(5rem, 1fr) 15em 1fr;
-    padding: 1rem;
 }
 
 .playback__details {
     display: grid;
     justify-self: start;
     overflow: hidden;
+
     .title {
         white-space: nowrap;
         @extend %text-elide;
     }
+
     .artist {
         white-space: nowrap;
         @extend %text-elide;
@@ -28,12 +29,14 @@
     align-items: center;
     display: grid;
     gap: 0.25rem;
-    justify-self: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1rem;
     grid-template-areas:
         "prev playpause next"
         "progress progress progress";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1rem;
+    justify-self: center;
+    padding: 0 0 0.5rem;
+    row-gap: 0.5rem;
 
     .prev {
         grid-area: prev;

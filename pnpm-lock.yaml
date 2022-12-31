@@ -15,6 +15,7 @@ specifiers:
   prettier: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-use-websocket: ^4.2.0
   sass: ^1.57.1
   typescript: ^4.9.4
   vite: ^4.0.3
@@ -24,6 +25,7 @@ dependencies:
   clsx: 1.2.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-use-websocket: 4.2.0_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@ladle/react': 2.4.5_3duxcpitbtplz62feflag7fwby
@@ -3834,6 +3836,16 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-use-websocket/4.2.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-ZovaTlc/tWX6a590fi3kMWImhyoWj46BWJWvO5oucZJzRnVVhYtes2D9g+5MKXjSdR7Es3456hB89v4/1pcBKg==}
+    peerDependencies:
+      react: '>= 18.0.0'
+      react-dom: '>= 18.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

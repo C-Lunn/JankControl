@@ -5,6 +5,7 @@ node_modules
 /package
 /unused
 
+config.json
 .env
 .env.*
 !.env.example
